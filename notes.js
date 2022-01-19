@@ -59,7 +59,7 @@ const readNotes = (title) => {
     const notes = loadNotes()
     const noteToRead = notes.find(note => note.title === title)
 
-    if (noteToRead === undefined) {
+    if (!noteToRead) {
         console.log(chalk.bold.red('No note found!'))
     } else {
         console.log(chalk.grey.inverse(noteToRead.title))
